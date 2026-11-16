@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Giosu39/Quiete/actions/workflows/build.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/Giosu39/Quiete/build.yml?branch=main&style=flat-square&label=build"></a>
-  <a href="https://github.com/Giosu39/Quiete/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/Giosu39/Quiete?style=flat-square&color=A8784A&label=release"></a>
+  <a href="https://github.com/giozuki/Quiete/actions/workflows/build.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/giozuki/Quiete/build.yml?branch=main&style=flat-square&label=build"></a>
+  <a href="https://github.com/giozuki/Quiete/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/giozuki/Quiete?style=flat-square&color=A8784A&label=release"></a>
   <img alt="Android 8.0+" src="https://img.shields.io/badge/Android-8.0%2B-5B8A78?style=flat-square&logo=android&logoColor=white">
   <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.0-A8784A?style=flat-square&logo=kotlin&logoColor=white">
   <img alt="Jetpack Compose" src="https://img.shields.io/badge/Jetpack%20Compose-Material%203-8E7BB5?style=flat-square&logo=jetpackcompose&logoColor=white">
@@ -51,7 +51,7 @@ Richiede **Android 8.0** (API 26) o superiore.
 ## 🛠️ Compilare dal codice
 
 ```bash
-git clone https://github.com/Giosu39/Quiete.git
+git clone https://github.com/giozuki/Quiete.git
 cd Quiete
 ./gradlew assembleRelease
 ```
