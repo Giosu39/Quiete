@@ -8,6 +8,8 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/Giosu39/Quiete/actions/workflows/build.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/Giosu39/Quiete/build.yml?branch=main&style=flat-square&label=build"></a>
+  <a href="https://github.com/Giosu39/Quiete/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/Giosu39/Quiete?style=flat-square&color=A8784A&label=release"></a>
   <img alt="Android 8.0+" src="https://img.shields.io/badge/Android-8.0%2B-5B8A78?style=flat-square&logo=android&logoColor=white">
   <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.0-A8784A?style=flat-square&logo=kotlin&logoColor=white">
   <img alt="Jetpack Compose" src="https://img.shields.io/badge/Jetpack%20Compose-Material%203-8E7BB5?style=flat-square&logo=jetpackcompose&logoColor=white">
@@ -47,7 +49,7 @@ Requires **Android 8.0** (API 26) or newer.
 ## 🛠️ Build from source
 
 ```bash
-git clone <this-repo-url>
+git clone https://github.com/Giosu39/Quiete.git
 cd Quiete
 ./gradlew assembleRelease
 ```
@@ -88,13 +90,31 @@ app/src/main/java/com/quiete/app/
 ```
 
 <details>
-<summary><b>Publishing signed releases (for maintainers)</b></summary>
+<summary><b>Publishing a new release (for maintainers)</b></summary>
 
 <br>
 
-Push a tag such as `v1.0.0` and the **Release** workflow builds the APK and attaches it to a new GitHub release.
+**Releasing a new version**
 
-To sign releases with a stable key, so users can update without reinstalling:
+1. In `app/build.gradle.kts`, bump both values:
+   ```kotlin
+   versionCode = 2        // integer, must always increase (1, 2, 3, ...)
+   versionName = "1.1"    // the version users see
+   ```
+   If `versionCode` doesn't increase, Android may not treat the new APK as an update.
+2. Commit and push.
+3. Create a matching tag, either from *Releases → Draft a new release* on GitHub, or from the terminal:
+   ```bash
+   git tag v1.1.0
+   git push origin v1.1.0
+   ```
+4. The **Release** workflow builds the signed APK and attaches it to the release (about 3 minutes).
+
+**Signing key**
+
+Releases are signed with the key stored in the repository secrets, so users can update without reinstalling.
+
+To set up the key from scratch (already done for this repository):
 
 1. Create a keystore once:
    ```bash

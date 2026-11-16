@@ -8,6 +8,8 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/Giosu39/Quiete/actions/workflows/build.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/Giosu39/Quiete/build.yml?branch=main&style=flat-square&label=build"></a>
+  <a href="https://github.com/Giosu39/Quiete/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/Giosu39/Quiete?style=flat-square&color=A8784A&label=release"></a>
   <img alt="Android 8.0+" src="https://img.shields.io/badge/Android-8.0%2B-5B8A78?style=flat-square&logo=android&logoColor=white">
   <img alt="Kotlin" src="https://img.shields.io/badge/Kotlin-2.0-A8784A?style=flat-square&logo=kotlin&logoColor=white">
   <img alt="Jetpack Compose" src="https://img.shields.io/badge/Jetpack%20Compose-Material%203-8E7BB5?style=flat-square&logo=jetpackcompose&logoColor=white">
@@ -47,7 +49,7 @@ Richiede **Android 8.0** (API 26) o superiore.
 ## 🛠️ Compilare dal codice
 
 ```bash
-git clone <url-del-repository>
+git clone https://github.com/Giosu39/Quiete.git
 cd Quiete
 ./gradlew assembleRelease
 ```
@@ -88,13 +90,31 @@ app/src/main/java/com/quiete/app/
 ```
 
 <details>
-<summary><b>Pubblicare release firmate (per chi mantiene il progetto)</b></summary>
+<summary><b>Pubblicare una nuova release (per chi mantiene il progetto)</b></summary>
 
 <br>
 
-Crea un tag come `v1.0.0` e fai il push: il workflow **Release** compila l'APK e lo allega a una nuova release su GitHub.
+**Pubblicare una nuova versione**
 
-Per firmare le release sempre con la stessa chiave, così gli utenti possono aggiornare senza disinstallare:
+1. In `app/build.gradle.kts` aumenta entrambi i valori:
+   ```kotlin
+   versionCode = 2        // numero intero, deve sempre crescere (1, 2, 3, ...)
+   versionName = "1.1"    // la versione mostrata agli utenti
+   ```
+   Se `versionCode` non aumenta, Android potrebbe non riconoscere il nuovo APK come aggiornamento.
+2. Fai commit e push.
+3. Crea il tag corrispondente, da *Releases → Draft a new release* su GitHub oppure da terminale:
+   ```bash
+   git tag v1.1.0
+   git push origin v1.1.0
+   ```
+4. Il workflow **Release** compila l'APK firmato e lo allega alla release (circa 3 minuti).
+
+**Chiave di firma**
+
+Le release sono firmate con la chiave salvata nei secret del repository, così gli utenti possono aggiornare senza disinstallare.
+
+Per configurare la chiave da zero (già fatto per questo repository):
 
 1. Crea un keystore una volta sola:
    ```bash
