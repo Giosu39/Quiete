@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="730" viewBox="0 0 1080 730">
+<defs>
+<linearGradient id="bg0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EEF3EF"/><stop offset="1" stop-color="#D3E2DA"/></linearGradient>
+<radialGradient id="gl0"><stop offset="0" stop-color="#9CC5B3" stop-opacity="0.55"/><stop offset="1" stop-color="#9CC5B3" stop-opacity="0"/></radialGradient>
+<clipPath id="cl0"><rect width="300" height="620" rx="38"/></clipPath>
+<linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#23253F"/><stop offset="1" stop-color="#45375A"/></linearGradient>
+<radialGradient id="gl1"><stop offset="0" stop-color="#8E7BB5" stop-opacity="0.55"/><stop offset="1" stop-color="#8E7BB5" stop-opacity="0"/></radialGradient>
+<clipPath id="cl1"><rect width="300" height="620" rx="38"/></clipPath>
+<linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050608"/><stop offset="1" stop-color="#110D14"/></linearGradient>
+<radialGradient id="gl2"><stop offset="0" stop-color="#5E3820" stop-opacity="0.55"/><stop offset="1" stop-color="#5E3820" stop-opacity="0"/></radialGradient>
+<clipPath id="cl2"><rect width="300" height="620" rx="38"/></clipPath>
+</defs>
+<g transform="translate(40 20)">
+<rect x="-6" y="-6" width="312" height="632" rx="44" fill="#1A1820"/>
+<g clip-path="url(#cl0)"><rect width="300" height="620" fill="url(#bg0)"/>
+<text x="24" y="56" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#6B7F77" letter-spacing="1">Buongiorno</text>
+<text x="22" y="100" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="44" font-weight="200" fill="#26352F">10:24</text>
+<circle cx="220" cy="62" r="16" fill="#FFFFFF" fill-opacity="0.6"/>
+<circle cx="260" cy="62" r="16" fill="#FFFFFF" fill-opacity="0.6"/>
+<path transform="translate(213 55) scale(0.6)" fill="#26352F" d="M12.34,2.02C6.59,1.82 2,6.42 2,12c0,5.52 4.48,10 10,10c3.71,0 6.93,-2.02 8.66,-5.02C13.15,16.73 8.57,8.55 12.34,2.02z"/>
+<circle cx="260" cy="62" r="6" fill="none" stroke="#26352F" stroke-width="2"/>
+<circle cx="150.0" cy="240" r="105" fill="url(#gl0)"/>
+<circle cx="150.0" cy="240" r="70" fill="none" stroke="#5B8A78" stroke-opacity="0.4" stroke-width="1.2"/>
+<circle cx="150.0" cy="240" r="58" fill="#5B8A78"/>
+<rect x="137.0" y="225" width="8" height="30" rx="4" fill="#FFFFFF"/>
+<rect x="155.0" y="225" width="8" height="30" rx="4" fill="#FFFFFF"/>
+<text x="150.0" y="368" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="300" fill="#26352F">Rumore marrone</text>
+<text x="150.0" y="396" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#5B8A78">Si ferma tra 27:41</text>
+<rect x="20" y="440" width="76.4" height="28" rx="14" fill="#5B8A78" fill-opacity="1"/>
+<text x="58.2" y="458.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#FFFFFF">Marrone</text>
+<rect x="103.4" y="440" width="83.6" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.6"/>
+<text x="145.2" y="458.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#26352F">Profondo</text>
+<rect x="194.0" y="440" width="54.8" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.6"/>
+<text x="221.4" y="458.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#26352F">Onde</text>
+<rect x="255.8" y="440" width="54.8" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.6"/>
+<text x="283.2" y="458.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#26352F">Rosa</text>
+<text x="20" y="492" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" fill="#6B7F77">Volume</text>
+<rect x="20" y="501" width="260" height="4" rx="2" fill="#5B8A78" fill-opacity="0.2"/>
+<rect x="20" y="501" width="143.0" height="4" rx="2" fill="#5B8A78"/>
+<circle cx="163.0" cy="503" r="8" fill="#5B8A78"/>
+<text x="20" y="528" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" fill="#6B7F77">Tono</text>
+<rect x="20" y="537" width="260" height="4" rx="2" fill="#5B8A78" fill-opacity="0.2"/>
+<rect x="20" y="537" width="65.0" height="4" rx="2" fill="#5B8A78"/>
+<circle cx="85.0" cy="539" r="8" fill="#5B8A78"/>
+<text x="20" y="568" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" fill="#6B7F77">Timer</text>
+<rect x="20" y="576" width="33.2" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.6"/>
+<text x="36.6" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#26352F">∞</text>
+<rect x="60.2" y="576" width="40.4" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.6"/>
+<text x="80.4" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#26352F">15</text>
+<rect x="107.6" y="576" width="40.4" height="28" rx="14" fill="#5B8A78" fill-opacity="1"/>
+<text x="127.8" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#FFFFFF">30</text>
+<rect x="155.0" y="576" width="40.4" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.6"/>
+<text x="175.2" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#26352F">45</text>
+<rect x="202.4" y="576" width="47.6" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.6"/>
+<text x="226.20000000000002" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#26352F">1 h</text>
+</g>
+<text x="150.0" y="680" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="300" fill="#8A8494" letter-spacing="3">DAY</text>
+</g>
+<g transform="translate(390 20)">
+<rect x="-6" y="-6" width="312" height="632" rx="44" fill="#1A1820"/>
+<g clip-path="url(#cl1)"><rect width="300" height="620" fill="url(#bg1)"/>
+<text x="24" y="56" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#A99FBF" letter-spacing="1">Buonasera</text>
+<text x="22" y="100" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="44" font-weight="200" fill="#ECE6F5">21:47</text>
+<circle cx="220" cy="62" r="16" fill="#FFFFFF" fill-opacity="0.1"/>
+<circle cx="260" cy="62" r="16" fill="#FFFFFF" fill-opacity="0.1"/>
+<path transform="translate(213 55) scale(0.6)" fill="#ECE6F5" d="M12.34,2.02C6.59,1.82 2,6.42 2,12c0,5.52 4.48,10 10,10c3.71,0 6.93,-2.02 8.66,-5.02C13.15,16.73 8.57,8.55 12.34,2.02z"/>
+<circle cx="260" cy="62" r="6" fill="none" stroke="#ECE6F5" stroke-width="2"/>
+<circle cx="150.0" cy="240" r="105" fill="url(#gl1)"/>
+<circle cx="150.0" cy="240" r="70" fill="none" stroke="#C7A6E0" stroke-opacity="0.4" stroke-width="1.2"/>
+<circle cx="150.0" cy="240" r="58" fill="#C7A6E0"/>
+<rect x="137.0" y="225" width="8" height="30" rx="4" fill="#23253F"/>
+<rect x="155.0" y="225" width="8" height="30" rx="4" fill="#23253F"/>
+<text x="150.0" y="368" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="300" fill="#ECE6F5">Rumore rosa</text>
+<text x="150.0" y="396" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#C7A6E0">Senza timer</text>
+<rect x="20" y="440" width="76.4" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.1"/>
+<text x="58.2" y="458.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#ECE6F5">Marrone</text>
+<rect x="103.4" y="440" width="83.6" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.1"/>
+<text x="145.2" y="458.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#ECE6F5">Profondo</text>
+<rect x="194.0" y="440" width="54.8" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.1"/>
+<text x="221.4" y="458.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#ECE6F5">Onde</text>
+<rect x="255.8" y="440" width="54.8" height="28" rx="14" fill="#C7A6E0" fill-opacity="1"/>
+<text x="283.2" y="458.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#23253F">Rosa</text>
+<text x="20" y="492" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" fill="#A99FBF">Volume</text>
+<rect x="20" y="501" width="260" height="4" rx="2" fill="#C7A6E0" fill-opacity="0.2"/>
+<rect x="20" y="501" width="143.0" height="4" rx="2" fill="#C7A6E0"/>
+<circle cx="163.0" cy="503" r="8" fill="#C7A6E0"/>
+<text x="20" y="528" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" fill="#A99FBF">Tono</text>
+<rect x="20" y="537" width="260" height="4" rx="2" fill="#C7A6E0" fill-opacity="0.2"/>
+<rect x="20" y="537" width="104.0" height="4" rx="2" fill="#C7A6E0"/>
+<circle cx="124.0" cy="539" r="8" fill="#C7A6E0"/>
+<text x="20" y="568" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" fill="#A99FBF">Timer</text>
+<rect x="20" y="576" width="33.2" height="28" rx="14" fill="#C7A6E0" fill-opacity="1"/>
+<text x="36.6" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#23253F">∞</text>
+<rect x="60.2" y="576" width="40.4" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.1"/>
+<text x="80.4" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#ECE6F5">15</text>
+<rect x="107.6" y="576" width="40.4" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.1"/>
+<text x="127.8" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#ECE6F5">30</text>
+<rect x="155.0" y="576" width="40.4" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.1"/>
+<text x="175.2" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#ECE6F5">45</text>
+<rect x="202.4" y="576" width="47.6" height="28" rx="14" fill="#FFFFFF" fill-opacity="0.1"/>
+<text x="226.20000000000002" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#ECE6F5">1 h</text>
+</g>
+<text x="150.0" y="680" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="300" fill="#8A8494" letter-spacing="3">EVENING</text>
+</g>
+<g transform="translate(740 20)">
+<rect x="-6" y="-6" width="312" height="632" rx="44" fill="#1A1820"/>
+<g clip-path="url(#cl2)"><rect width="300" height="620" fill="url(#bg2)"/>
+<text x="24" y="56" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#6A5E51" letter-spacing="1">Buonanotte</text>
+<text x="22" y="100" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="44" font-weight="200" fill="#AE9D88">23:52</text>
+<circle cx="220" cy="62" r="16" fill="#FFB98A" fill-opacity="0.07"/>
+<circle cx="260" cy="62" r="16" fill="#FFB98A" fill-opacity="0.07"/>
+<path transform="translate(213 55) scale(0.6)" fill="#AE9D88" d="M12.34,2.02C6.59,1.82 2,6.42 2,12c0,5.52 4.48,10 10,10c3.71,0 6.93,-2.02 8.66,-5.02C13.15,16.73 8.57,8.55 12.34,2.02z"/>
+<circle cx="260" cy="62" r="6" fill="none" stroke="#AE9D88" stroke-width="2"/>
+<circle cx="150.0" cy="240" r="105" fill="url(#gl2)"/>
+<circle cx="150.0" cy="240" r="70" fill="none" stroke="#A8784A" stroke-opacity="0.4" stroke-width="1.2"/>
+<circle cx="150.0" cy="240" r="58" fill="#A8784A"/>
+<rect x="137.0" y="225" width="8" height="30" rx="4" fill="#110D14"/>
+<rect x="155.0" y="225" width="8" height="30" rx="4" fill="#110D14"/>
+<text x="150.0" y="368" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="18" font-weight="300" fill="#AE9D88">Rumore marrone</text>
+<text x="150.0" y="396" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#A8784A">Si ferma tra 58:03</text>
+<rect x="20" y="440" width="76.4" height="28" rx="14" fill="#A8784A" fill-opacity="1"/>
+<text x="58.2" y="458.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#110D14">Marrone</text>
+<rect x="103.4" y="440" width="83.6" height="28" rx="14" fill="#FFB98A" fill-opacity="0.07"/>
+<text x="145.2" y="458.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#AE9D88">Profondo</text>
+<rect x="194.0" y="440" width="54.8" height="28" rx="14" fill="#FFB98A" fill-opacity="0.07"/>
+<text x="221.4" y="458.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#AE9D88">Onde</text>
+<rect x="255.8" y="440" width="54.8" height="28" rx="14" fill="#FFB98A" fill-opacity="0.07"/>
+<text x="283.2" y="458.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#AE9D88">Rosa</text>
+<text x="20" y="492" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" fill="#6A5E51">Volume</text>
+<rect x="20" y="501" width="260" height="4" rx="2" fill="#A8784A" fill-opacity="0.2"/>
+<rect x="20" y="501" width="143.0" height="4" rx="2" fill="#A8784A"/>
+<circle cx="163.0" cy="503" r="8" fill="#A8784A"/>
+<text x="20" y="528" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" fill="#6A5E51">Tono</text>
+<rect x="20" y="537" width="260" height="4" rx="2" fill="#A8784A" fill-opacity="0.2"/>
+<rect x="20" y="537" width="156.0" height="4" rx="2" fill="#A8784A"/>
+<circle cx="176.0" cy="539" r="8" fill="#A8784A"/>
+<text x="20" y="568" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="10" fill="#6A5E51">Timer</text>
+<rect x="20" y="576" width="33.2" height="28" rx="14" fill="#FFB98A" fill-opacity="0.07"/>
+<text x="36.6" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#AE9D88">∞</text>
+<rect x="60.2" y="576" width="40.4" height="28" rx="14" fill="#FFB98A" fill-opacity="0.07"/>
+<text x="80.4" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#AE9D88">15</text>
+<rect x="107.6" y="576" width="40.4" height="28" rx="14" fill="#FFB98A" fill-opacity="0.07"/>
+<text x="127.8" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#AE9D88">30</text>
+<rect x="155.0" y="576" width="40.4" height="28" rx="14" fill="#FFB98A" fill-opacity="0.07"/>
+<text x="175.2" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#AE9D88">45</text>
+<rect x="202.4" y="576" width="47.6" height="28" rx="14" fill="#A8784A" fill-opacity="1"/>
+<text x="226.20000000000002" y="594.5" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#110D14">1 h</text>
+</g>
+<text x="150.0" y="680" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="16" font-weight="300" fill="#8A8494" letter-spacing="3">NIGHT</text>
+</g>
+</svg>

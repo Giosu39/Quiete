@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_bg">#1B1730</color>
+    <color name="ic_fg">#E8C9A0</color>
+
+    <style name="Theme.Quiete" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#15131C</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>
