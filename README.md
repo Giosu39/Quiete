@@ -3,7 +3,8 @@
 </p>
 
 <p align="center">
-  <b>A calm, minimal Android app that plays brown noise to help you sleep.</b><br>
+  <b>A calm, minimal Android app that plays soothing noise to help you sleep.</b><br>
+  Brown, deep brown, waves, pink and white noise, generated in real time.<br>
   No audio files, no loops, no internet, no ads. Just noise.
 </p>
 
@@ -38,6 +39,7 @@
 | 🎚️ **Tone control** | Go from *natural* to *muffled* with a low-pass filter. |
 | 🔒 **Screen-off playback** | Keeps playing in the background, with a notification showing the countdown and quick actions. |
 | 🎧 **Smart audio** | Stops when headphones are unplugged, lowers the volume during calls, and can optionally play alongside podcasts or audiobooks. |
+| 🌍 **English and Italian** | The interface follows your phone's language. |
 | 🫁 **Breathing orb** | The central circle breathes at about 6 breaths per minute, a pace often used for relaxation. |
 
 ## 📥 Download

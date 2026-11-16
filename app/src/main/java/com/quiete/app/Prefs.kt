@@ -1,8 +1,11 @@
 package com.quiete.app
 
 import android.content.Context
+import androidx.annotation.StringRes
 
-enum class ThemeMode(val label: String) { AUTO("Automatico"), DAY("Giorno"), NIGHT("Notte") }
+enum class ThemeMode(@StringRes val label: Int) {
+    AUTO(R.string.theme_auto), DAY(R.string.theme_day), NIGHT(R.string.theme_night)
+}
 
 data class Settings(
     val noise: NoiseType = NoiseType.BROWN,

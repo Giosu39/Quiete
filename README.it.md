@@ -3,7 +3,8 @@
 </p>
 
 <p align="center">
-  <b>Un'app Android calma e minimale che riproduce rumore marrone per aiutarti a dormire.</b><br>
+  <b>Un'app Android calma e minimale che riproduce rumori rilassanti per aiutarti a dormire.</b><br>
+  Rumore marrone, marrone profondo, onde, rosa e bianco, generati in tempo reale.<br>
   Niente file audio, niente loop, niente internet, niente pubblicità. Solo rumore.
 </p>
 
@@ -38,6 +39,7 @@
 | 🎚️ **Tono** | Da *naturale* a *ovattato*, con un filtro passa-basso. |
 | 🔒 **A schermo spento** | Continua a suonare in background, con una notifica che mostra il conto alla rovescia e i comandi rapidi. |
 | 🎧 **Audio intelligente** | Si ferma se scolleghi le cuffie, si abbassa durante le chiamate e, se vuoi, suona insieme a podcast o audiolibri. |
+| 🌍 **Italiano e inglese** | L'interfaccia segue la lingua del telefono. |
 | 🫁 **Cerchio che respira** | Il cerchio centrale respira a circa 6 respiri al minuto, un ritmo spesso usato per rilassarsi. |
 
 ## 📥 Download

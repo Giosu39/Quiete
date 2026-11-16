@@ -17,6 +17,7 @@ import android.os.Build
 import android.os.IBinder
 import android.os.PowerManager
 import android.os.SystemClock
+import android.text.format.DateFormat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.ServiceCompat
 import androidx.core.content.ContextCompat
@@ -27,9 +28,7 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
 import java.util.Date
-import java.util.Locale
 
 /**
  * Tiene vivo il processo mentre suona (anche a schermo spento) e mostra
@@ -65,8 +64,8 @@ class NoiseService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        val channel = NotificationChannel(CHANNEL_ID, "Riproduzione", NotificationManager.IMPORTANCE_LOW).apply {
-            description = "Mostra il rumore in riproduzione e il timer"
+        val channel = NotificationChannel(CHANNEL_ID, getString(R.string.channel_name), NotificationManager.IMPORTANCE_LOW).apply {
+            description = getString(R.string.channel_desc)
             setShowBadge(false)
         }
         notificationManager.createNotificationChannel(channel)
@@ -181,7 +180,7 @@ class NoiseService : Service() {
 
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_moon)
-            .setContentTitle("Rumore ${s.noise.label.lowercase()}")
+            .setContentTitle(getString(s.noise.title))
             .setContentIntent(openApp)
             .setOngoing(true)
             .setSilent(true)
@@ -189,21 +188,23 @@ class NoiseService : Service() {
             .setCategory(NotificationCompat.CATEGORY_SERVICE)
             .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
             .setForegroundServiceBehavior(NotificationCompat.FOREGROUND_SERVICE_IMMEDIATE)
-            .addAction(0, "Ferma", stop)
-            .addAction(0, "+15 min", add)
+            .addAction(0, getString(R.string.action_stop), stop)
+            .addAction(0, getString(R.string.action_add15), add)
 
         val end = s.timerEndAt
         if (end != null) {
             val remaining = (end - SystemClock.elapsedRealtime()).coerceAtLeast(0)
             val wallEnd = System.currentTimeMillis() + remaining
-            val hhmm = SimpleDateFormat("HH:mm", Locale.ITALY).format(Date(wallEnd))
-            builder.setContentText(if (s.fadingOut) "In dissolvenza…" else "Si ferma alle $hhmm")
+            val endTime = DateFormat.getTimeFormat(this).format(Date(wallEnd))
+            builder.setContentText(
+                if (s.fadingOut) getString(R.string.notif_fading) else getString(R.string.notif_stops_at, endTime)
+            )
                 .setWhen(wallEnd)
                 .setShowWhen(true)
                 .setUsesChronometer(true)
                 .setChronometerCountDown(true)
         } else {
-            builder.setContentText("Senza timer").setShowWhen(false)
+            builder.setContentText(getString(R.string.no_timer)).setShowWhen(false)
         }
         return builder.build()
     }

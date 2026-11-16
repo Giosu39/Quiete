@@ -78,6 +78,7 @@ import androidx.compose.ui.input.pointer.PointerEventPass
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.ProgressBarRangeInfo
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.progressBarRangeInfo
@@ -161,11 +162,12 @@ fun QuieteApp(
     }
 
     val statusText = when {
-        !player.playing -> "Tocca per iniziare"
-        player.fadingOut -> "Buon riposo…"
-        player.timerEndAt != null ->
-            "Si ferma tra " + formatDuration((player.timerEndAt!! - nowMs).coerceAtLeast(0))
-        else -> "Senza timer"
+        !player.playing -> stringResource(R.string.status_tap)
+        player.fadingOut -> stringResource(R.string.status_fading)
+        player.timerEndAt != null -> stringResource(
+            R.string.status_stops_in, formatDuration((player.timerEndAt!! - nowMs).coerceAtLeast(0))
+        )
+        else -> stringResource(R.string.no_timer)
     }
 
     val scheme = if (palette.isLight)
@@ -211,11 +213,11 @@ fun QuieteApp(
                             )
                         }
                         RoundButton(palette, onClick = { blackout = true }) {
-                            Icon(painterResource(R.drawable.ic_moon), "Oscura schermo", tint = palette.text, modifier = Modifier.size(19.dp))
+                            Icon(painterResource(R.drawable.ic_moon), stringResource(R.string.cd_blackout), tint = palette.text, modifier = Modifier.size(19.dp))
                         }
                         Spacer(Modifier.width(10.dp))
                         RoundButton(palette, onClick = { showSettings = true }) {
-                            Icon(Icons.Outlined.Settings, "Impostazioni", tint = palette.text, modifier = Modifier.size(21.dp))
+                            Icon(Icons.Outlined.Settings, stringResource(R.string.cd_settings), tint = palette.text, modifier = Modifier.size(21.dp))
                         }
                     }
 
@@ -234,12 +236,12 @@ fun QuieteApp(
                     }
 
                     Text(
-                        "Rumore " + player.noise.label.lowercase(), color = palette.text,
+                        stringResource(player.noise.title), color = palette.text,
                         fontSize = 24.sp, fontWeight = FontWeight.Light,
                     )
                     Spacer(Modifier.height(2.dp))
                     Text(
-                        player.noise.description, color = palette.muted,
+                        stringResource(player.noise.description), color = palette.muted,
                         fontSize = 15.sp, textAlign = TextAlign.Center,
                     )
                     Spacer(Modifier.height(14.dp))
@@ -257,19 +259,21 @@ fun QuieteApp(
                         Segmented(
                             options = NoiseType.entries,
                             selected = player.noise,
-                            label = { it.short },
+                            label = { context.getString(it.short) },
                             palette = palette,
+                            // Spazio proporzionale alla lunghezza del nome, così nessuno viene tagliato.
+                            weightOf = { context.getString(it.short).length + 3f },
                         ) { type ->
                             SleepPlayer.setNoise(type)
                             update { it.copy(noise = type) }
                         }
 
                         Spacer(Modifier.height(16.dp))
-                        SliderRow("Volume", "${(player.volume * 100).toInt()}%", player.volume, palette,
+                        SliderRow(stringResource(R.string.volume), "${(player.volume * 100).toInt()}%", player.volume, palette,
                             onChange = { SleepPlayer.setVolume(it) },
                             onDone = { update { it.copy(volume = SleepPlayer.state.value.volume) } },
                         )
-                        SliderRow("Tono", warmthLabel(player.warmth), player.warmth, palette,
+                        SliderRow(stringResource(R.string.tone), warmthLabel(player.warmth), player.warmth, palette,
                             onChange = { SleepPlayer.setWarmth(it) },
                             onDone = { update { it.copy(warmth = SleepPlayer.state.value.warmth) } },
                         )
@@ -279,10 +283,10 @@ fun QuieteApp(
                             Modifier.fillMaxWidth().height(28.dp).padding(horizontal = 4.dp),
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
-                            Text("Timer · minuti", color = palette.muted, fontSize = 14.sp, modifier = Modifier.weight(1f))
+                            Text(stringResource(R.string.timer_minutes), color = palette.muted, fontSize = 14.sp, modifier = Modifier.weight(1f))
                             if (player.playing && player.timerEndAt != null) {
                                 Text(
-                                    "+15 min", color = palette.primary, fontSize = 14.sp, fontWeight = FontWeight.SemiBold,
+                                    stringResource(R.string.action_add15), color = palette.primary, fontSize = 14.sp, fontWeight = FontWeight.SemiBold,
                                     modifier = Modifier
                                         .clip(RoundedCornerShape(50))
                                         .background(palette.primary.copy(alpha = 0.12f))
@@ -347,7 +351,7 @@ private fun AmbientLayer(phase: Phase, palette: Palette) {
     )
     val stars = remember {
         val rnd = Random(7)
-        List(42) { Star(rnd.nextFloat(), rnd.nextFloat() * 0.55f, 0.5f + rnd.nextFloat() * 1.1f, rnd.nextFloat()) }
+        List(32) { Star(rnd.nextFloat(), rnd.nextFloat() * 0.55f, 0.35f + rnd.nextFloat() * 0.6f, rnd.nextFloat()) }
     }
 
     Canvas(Modifier.fillMaxSize()) {
@@ -367,7 +371,7 @@ private fun AmbientLayer(phase: Phase, palette: Palette) {
             stars.forEach { s ->
                 val tw = 0.5f + 0.5f * sin(2 * PI * (twinkle + s.phase)).toFloat()
                 drawCircle(
-                    palette.text.copy(alpha = (0.15f + 0.45f * tw) * starsAlpha),
+                    palette.text.copy(alpha = (0.06f + 0.24f * tw) * starsAlpha),
                     radius = s.radius.dp.toPx(),
                     center = Offset(s.x * w, s.y * h),
                 )
@@ -390,6 +394,7 @@ private fun BreathingOrb(playing: Boolean, palette: Palette, modifier: Modifier,
     )
     val amount by animateFloatAsState(if (playing) 1f else 0f, tween(1500), label = "amount")
 
+    val description = stringResource(if (playing) R.string.cd_stop else R.string.cd_play)
     Box(modifier, contentAlignment = Alignment.Center) {
         Canvas(Modifier.fillMaxSize()) {
             val b = breath * amount
@@ -417,8 +422,8 @@ private fun BreathingOrb(playing: Boolean, palette: Palette, modifier: Modifier,
                 style = Stroke(width = 1.2.dp.toPx()),
             )
             // Sfera: luce morbida in alto a sinistra
-            val light = lerp(palette.primary, Color.White, 0.28f)
-            val shade = lerp(palette.primary, Color.Black, 0.12f)
+            val light = lerp(palette.primary, Color.White, if (palette.isLight) 0.28f else 0.12f)
+            val shade = lerp(palette.primary, Color.Black, if (palette.isLight) 0.12f else 0.3f)
             drawCircle(
                 Brush.radialGradient(
                     listOf(light, palette.primary, shade),
@@ -437,7 +442,7 @@ private fun BreathingOrb(playing: Boolean, palette: Palette, modifier: Modifier,
                     indication = null,
                     onClick = onClick,
                 )
-                .semantics { contentDescription = if (playing) "Ferma" else "Avvia" },
+                .semantics { contentDescription = description },
             contentAlignment = Alignment.Center,
         ) {
             Canvas(Modifier.fillMaxSize(0.26f)) {
@@ -490,6 +495,7 @@ private fun <T> Segmented(
     selected: T?,
     label: (T) -> String,
     palette: Palette,
+    weightOf: (T) -> Float = { 1f },
     onSelect: (T) -> Unit,
 ) {
     Row(
@@ -506,7 +512,7 @@ private fun <T> Segmented(
             val fg by animateColorAsState(if (isSelected) palette.onPrimary else palette.muted, tween(350), label = "segFg")
             Box(
                 Modifier
-                    .weight(1f)
+                    .weight(weightOf(option))
                     .height(40.dp)
                     .clip(RoundedCornerShape(50))
                     .background(bg)
@@ -610,13 +616,14 @@ private fun Blackout(now: LocalTime, status: String, onExit: () -> Unit) {
             Text(now.format(TimeFmt), color = Color(0xFF3A2E24), fontSize = 56.sp, fontWeight = FontWeight.ExtraLight)
             Text(status, color = Color(0xFF2E251D), fontSize = 14.sp)
             Spacer(Modifier.height(28.dp))
-            Text("Tocca per tornare", color = Color(0xFF211A15), fontSize = 12.sp)
+            Text(stringResource(R.string.blackout_exit), color = Color(0xFF211A15), fontSize = 12.sp)
         }
     }
 }
 
 @Composable
 private fun SettingsContent(settings: Settings, palette: Palette, update: ((Settings) -> Settings) -> Unit) {
+    val context = LocalContext.current
     Column(
         Modifier
             .fillMaxWidth()
@@ -624,46 +631,48 @@ private fun SettingsContent(settings: Settings, palette: Palette, update: ((Sett
             .padding(horizontal = 24.dp)
             .padding(bottom = 32.dp)
     ) {
-        Text("Impostazioni", fontSize = 24.sp, fontWeight = FontWeight.Light, color = palette.text)
+        Text(stringResource(R.string.settings_title), fontSize = 24.sp, fontWeight = FontWeight.Light, color = palette.text)
 
-        SectionTitle("Tema", palette)
-        Segmented(ThemeMode.entries, settings.themeMode, { it.label }, palette) { mode ->
+        SectionTitle(stringResource(R.string.section_theme), palette)
+        Segmented(ThemeMode.entries, settings.themeMode, { context.getString(it.label) }, palette) { mode ->
             update { it.copy(themeMode = mode) }
         }
         Spacer(Modifier.height(8.dp))
         Text(
-            "In automatico: giorno chiaro, sera indaco dalle %02d:00, notte scura e calda dalle %02d:00 alle %02d:00."
-                .format((settings.nightStartHour + 21) % 24, settings.nightStartHour, settings.nightEndHour),
+            stringResource(
+                R.string.theme_hint,
+                (settings.nightStartHour + 21) % 24, settings.nightStartHour, settings.nightEndHour,
+            ),
             color = palette.muted, fontSize = 14.sp,
         )
 
-        SectionTitle("Orario della notte", palette)
-        HourStepper("Inizia alle", settings.nightStartHour, palette) { h -> update { it.copy(nightStartHour = h) } }
-        HourStepper("Finisce alle", settings.nightEndHour, palette) { h -> update { it.copy(nightEndHour = h) } }
+        SectionTitle(stringResource(R.string.section_night_hours), palette)
+        HourStepper(stringResource(R.string.night_starts), settings.nightStartHour, palette) { h -> update { it.copy(nightStartHour = h) } }
+        HourStepper(stringResource(R.string.night_ends), settings.nightEndHour, palette) { h -> update { it.copy(nightEndHour = h) } }
         Text(
-            "Di notte e di giorno l'app ricorda due timer diversi.",
+            stringResource(R.string.two_timers_hint),
             color = palette.muted, fontSize = 14.sp,
         )
 
-        SectionTitle("Dissolvenza finale del timer", palette)
+        SectionTitle(stringResource(R.string.section_fade), palette)
         val fades = listOf(10, 30, 60, 180, 300)
         Segmented(fades, settings.fadeOutSeconds, { if (it < 60) "${it}s" else "${it / 60}m" }, palette) { sec ->
             update { it.copy(fadeOutSeconds = sec) }
         }
 
-        SectionTitle("Comportamento", palette)
-        ToggleRow("Ferma se scolleghi le cuffie", null, settings.stopOnUnplug, palette) { v ->
+        SectionTitle(stringResource(R.string.section_behavior), palette)
+        ToggleRow(stringResource(R.string.opt_unplug), null, settings.stopOnUnplug, palette) { v ->
             update { it.copy(stopOnUnplug = v) }
         }
-        ToggleRow("Suona insieme ad altre app", "Per ascoltare podcast o audiolibri sopra il rumore", settings.mixWithOthers, palette) { v ->
+        ToggleRow(stringResource(R.string.opt_mix), stringResource(R.string.opt_mix_sub), settings.mixWithOthers, palette) { v ->
             update { it.copy(mixWithOthers = v) }
         }
-        ToggleRow("Oscura lo schermo di notte", "Dopo 20 secondi senza tocchi, mentre suona", settings.autoDimAtNight, palette) { v ->
+        ToggleRow(stringResource(R.string.opt_dim), stringResource(R.string.opt_dim_sub), settings.autoDimAtNight, palette) { v ->
             update { it.copy(autoDimAtNight = v) }
         }
         Spacer(Modifier.height(8.dp))
         Text(
-            "Le opzioni su cuffie e altre app valgono dalla prossima riproduzione.",
+            stringResource(R.string.behavior_note),
             color = palette.muted, fontSize = 13.sp,
         )
     }
@@ -736,20 +745,26 @@ private fun RoundButton(
     ) { content() }
 }
 
-private fun greeting(phase: Phase, now: LocalTime): String = when {
-    phase == Phase.NIGHT -> "Buonanotte"
-    now.hour in 5..11 -> "Buongiorno"
-    now.hour in 12..17 -> "Buon pomeriggio"
-    now.hour in 18..21 -> "Buonasera"
-    else -> "Buonanotte"
-}
+@Composable
+private fun greeting(phase: Phase, now: LocalTime): String = stringResource(
+    when {
+        phase == Phase.NIGHT -> R.string.greet_night
+        now.hour in 5..11 -> R.string.greet_morning
+        now.hour in 12..17 -> R.string.greet_afternoon
+        now.hour in 18..21 -> R.string.greet_evening
+        else -> R.string.greet_night
+    }
+)
 
-private fun warmthLabel(w: Float): String = when {
-    w < 0.15f -> "Naturale"
-    w < 0.45f -> "Morbido"
-    w < 0.75f -> "Caldo"
-    else -> "Ovattato"
-}
+@Composable
+private fun warmthLabel(w: Float): String = stringResource(
+    when {
+        w < 0.15f -> R.string.warmth_natural
+        w < 0.45f -> R.string.warmth_soft
+        w < 0.75f -> R.string.warmth_warm
+        else -> R.string.warmth_muffled
+    }
+)
 
 private fun formatDuration(ms: Long): String {
     val total = (ms + 999) / 1000

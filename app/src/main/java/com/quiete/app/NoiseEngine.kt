@@ -4,6 +4,7 @@ import android.media.AudioAttributes
 import android.media.AudioFormat
 import android.media.AudioTrack
 import android.os.Process
+import androidx.annotation.StringRes
 import kotlin.math.PI
 import kotlin.math.abs
 import kotlin.math.exp
@@ -13,12 +14,12 @@ import kotlin.math.min
 import kotlin.math.sin
 import kotlin.math.tanh
 
-enum class NoiseType(val label: String, val short: String, val description: String) {
-    BROWN("Marrone", "Marrone", "Profondo e avvolgente"),
-    DEEP_BROWN("Marrone profondo", "Profondo", "Ancora più cupo, come un rombo lontano"),
-    WAVES("Onde", "Onde", "Rumore marrone che respira come il mare"),
-    PINK("Rosa", "Rosa", "Bilanciato, ricorda una pioggia fitta"),
-    WHITE("Bianco", "Bianco", "Brillante, copre quasi ogni rumore"),
+enum class NoiseType(@StringRes val title: Int, @StringRes val short: Int, @StringRes val description: Int) {
+    BROWN(R.string.noise_brown_title, R.string.noise_brown_short, R.string.noise_brown_desc),
+    DEEP_BROWN(R.string.noise_deep_title, R.string.noise_deep_short, R.string.noise_deep_desc),
+    WAVES(R.string.noise_waves_title, R.string.noise_waves_short, R.string.noise_waves_desc),
+    PINK(R.string.noise_pink_title, R.string.noise_pink_short, R.string.noise_pink_desc),
+    WHITE(R.string.noise_white_title, R.string.noise_white_short, R.string.noise_white_desc),
 }
 
 /**
