@@ -134,3 +134,5 @@ Senza questi secret, l'APK viene firmato con una chiave di debug temporanea.
 ## 📄 Licenza
 
 [MIT](LICENSE)
+
+Il font [Nunito](https://github.com/googlefonts/nunito) è distribuito con licenza [SIL Open Font License 1.1](third_party/Nunito-OFL.txt).

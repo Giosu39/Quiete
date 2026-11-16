@@ -134,3 +134,5 @@ Without these secrets, the APK is signed with a temporary debug key.
 ## 📄 License
 
 [MIT](LICENSE)
+
+The [Nunito](https://github.com/googlefonts/nunito) font is licensed under the [SIL Open Font License 1.1](third_party/Nunito-OFL.txt).

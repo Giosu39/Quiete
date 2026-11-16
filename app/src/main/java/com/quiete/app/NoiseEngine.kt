@@ -13,12 +13,12 @@ import kotlin.math.min
 import kotlin.math.sin
 import kotlin.math.tanh
 
-enum class NoiseType(val label: String, val description: String) {
-    BROWN("Marrone", "Profondo e avvolgente"),
-    DEEP_BROWN("Marrone profondo", "Ancora più cupo, come un rombo lontano"),
-    WAVES("Onde", "Rumore marrone che respira come il mare"),
-    PINK("Rosa", "Bilanciato, ricorda una pioggia fitta"),
-    WHITE("Bianco", "Brillante, copre quasi ogni rumore"),
+enum class NoiseType(val label: String, val short: String, val description: String) {
+    BROWN("Marrone", "Marrone", "Profondo e avvolgente"),
+    DEEP_BROWN("Marrone profondo", "Profondo", "Ancora più cupo, come un rombo lontano"),
+    WAVES("Onde", "Onde", "Rumore marrone che respira come il mare"),
+    PINK("Rosa", "Rosa", "Bilanciato, ricorda una pioggia fitta"),
+    WHITE("Bianco", "Bianco", "Brillante, copre quasi ogni rumore"),
 }
 
 /**

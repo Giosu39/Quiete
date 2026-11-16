@@ -12,8 +12,8 @@ android {
         applicationId = "com.quiete.app"
         minSdk = 26
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "1.1"
     }
 
     // Firma di release letta da variabili d'ambiente (impostate dai Secrets di GitHub).
